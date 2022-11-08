@@ -1,9 +1,7 @@
 import { Form } from "./modules";
 
 function App() {
-  return (
-    <Form />
-  );
+  return <Form />;
 }
 
 export default App;

@@ -1,7 +1,7 @@
-export const Button = (props) => {
-  const { onClick, type = 'button', ...rest } = props;
+import React from "react";
 
-  return (
-    <button onClick={onClick} type={type} {...rest} />
-  )
+export const Button = (props) => {
+  const { onClick, type = "button", ...rest } = props;
+
+  return <button onClick={onClick} type={type} {...rest} />;
 };
