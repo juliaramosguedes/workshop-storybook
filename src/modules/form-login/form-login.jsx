@@ -67,7 +67,7 @@ export const FormLogin = () => {
         name="email"
         label="E-mail"
       >
-        <Input option="email" {...register("email", { required: true })} />
+        <Input id="email" option="email" {...register("email", { required: true })} />
       </FormField>
       <FormField
         error={errors.password?.message}
@@ -76,6 +76,7 @@ export const FormLogin = () => {
         label="Senha"
       >
         <Input
+          id="password"
           option="password"
           error={errors.password?.message}
           {...register("password", { required: true })}
