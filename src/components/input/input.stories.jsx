@@ -4,6 +4,7 @@ import { Input } from "./input";
 export default {
   title: "Components/Input",
   component: Input,
+  argTypes: { option: { control: 'inline-radio', options: ['email', 'password'] } }
 };
 
 const Template = (args) => (

@@ -4,6 +4,7 @@ import { FormFeedback } from './form-feedback';
 export default {
   title: 'Components/FormFeedback',
   component: FormFeedback,
+  argTypes: { status: { control: 'inline-radio', options: ['success', 'error'] } }
 };
 
 const Template = (args) => (
