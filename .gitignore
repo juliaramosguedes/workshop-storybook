@@ -6,8 +6,8 @@
 .pnp.js
 
 # IDE
-.vscode
 .idea
+.vscode
 
 # testing
 /coverage
