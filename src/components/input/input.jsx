@@ -23,7 +23,7 @@ export const Input = forwardRef((props, ref) => {
     password: {
       leftIcon: Key,
       rightIcon: showPassword ? EyeOff : Eye,
-      type: "password",
+      type: showPassword ? "text" : "password",
     },
   };
 
