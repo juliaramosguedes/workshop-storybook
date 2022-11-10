@@ -90,7 +90,12 @@
     "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.6.7",
+    "msw": "^0.48.1",
+    "msw-storybook-addon": "^1.6.3",
     "prettier": "2.7.1",
     "webpack": "^5.75.0"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }

@@ -20,10 +20,24 @@ export const FormLogin = () => {
 
   const onSubmit = async (data) => {
     setFormFeedback(null);
-    console.info(data);
 
     try {
-      await delay(1500);
+      const response = await fetch("https://programaria.com.br/api/login", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      
+      if (!response.ok) {
+        throw new Error({
+          message: "Something went wrong!",
+          status: response.status,
+        });
+      }
+
       setFormFeedback({
         status: "success",
         message: "Acesso autorizado",

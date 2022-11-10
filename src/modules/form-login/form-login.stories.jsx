@@ -1,5 +1,6 @@
 import React from "react";
 import { within, userEvent } from '@storybook/testing-library';
+import { rest } from 'msw';
 
 import { FormLogin } from "./form-login";
 import { delay } from "../../utils";
@@ -13,8 +14,8 @@ const Template = (args) => (
   <FormLogin {...args} />
 );
 
-export const Default = Template.bind({});
-Default.play = async ({ canvasElement }) => {
+export const SubmitSuccess = Template.bind({});
+SubmitSuccess.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
   const emailInput = canvas.getByLabelText('E-mail', {
     selector: 'input',
@@ -37,3 +38,24 @@ Default.play = async ({ canvasElement }) => {
   await delay(1000);
   await userEvent.click(submitButton);
 };
+SubmitSuccess.parameters = {
+  msw: {
+    handlers: [
+      rest.post("https://programaria.com.br/api/login", (req, res, ctx) => res(
+        ctx.status(200)
+      )),
+    ]
+  },
+};
+
+export const SubmitError = Template.bind({});
+SubmitError.play = SubmitSuccess.play;
+SubmitError.parameters = {
+  msw: {
+    handlers: [
+      rest.post("https://programaria.com.br/api/login", (req, res, ctx) => res(
+        ctx.status(500)
+      )),
+    ]
+  },
+}
