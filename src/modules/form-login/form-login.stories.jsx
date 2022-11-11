@@ -1,39 +1,37 @@
 import React from "react";
-import { within, userEvent } from '@storybook/testing-library';
-import { rest } from 'msw';
+import { within, userEvent } from "@storybook/testing-library";
+import { rest } from "msw";
 
+import { delay } from "utils";
 import { FormLogin } from "./form-login";
-import { delay } from "../../utils";
 
 export default {
   title: "Modules/FormLogin",
   component: FormLogin,
 };
 
-const Template = (args) => (
-  <FormLogin {...args} />
-);
+const Template = (args) => <FormLogin {...args} />;
 
 export const SubmitSuccess = Template.bind({});
 SubmitSuccess.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
-  const emailInput = canvas.getByLabelText('E-mail', {
-    selector: 'input',
+  const emailInput = canvas.getByLabelText("E-mail", {
+    selector: "input",
   });
-  const passwordInput = canvas.getByLabelText('Senha', {
-    selector: 'input',
+  const passwordInput = canvas.getByLabelText("Senha", {
+    selector: "input",
   });
 
   await delay(1000);
-  await userEvent.type(emailInput, 'hi@juliaramos.dev', {
+  await userEvent.type(emailInput, "hi@juliaramos.dev", {
     delay: 150,
   });
 
   await delay(1000);
-  await userEvent.type(passwordInput, 'Summit2022', {
+  await userEvent.type(passwordInput, "Summit2022", {
     delay: 150,
   });
-  const submitButton = canvas.getByRole('button');
+  const submitButton = canvas.getByRole("button");
 
   await delay(1000);
   await userEvent.click(submitButton);
@@ -41,10 +39,10 @@ SubmitSuccess.play = async ({ canvasElement }) => {
 SubmitSuccess.parameters = {
   msw: {
     handlers: [
-      rest.post("https://programaria.com.br/api/login", (req, res, ctx) => res(
-        ctx.status(200)
-      )),
-    ]
+      rest.post("https://programaria.com.br/api/login", (req, res, ctx) =>
+        res(ctx.status(200))
+      ),
+    ],
   },
 };
 
@@ -53,9 +51,9 @@ SubmitError.play = SubmitSuccess.play;
 SubmitError.parameters = {
   msw: {
     handlers: [
-      rest.post("https://programaria.com.br/api/login", (req, res, ctx) => res(
-        ctx.status(500)
-      )),
-    ]
+      rest.post("https://programaria.com.br/api/login", (req, res, ctx) =>
+        res(ctx.status(500))
+      ),
+    ],
   },
-}
+};

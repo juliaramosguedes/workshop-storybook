@@ -1,7 +1,7 @@
 import { ChakraProvider } from "@chakra-ui/react";
-import { initialize, mswDecorator } from 'msw-storybook-addon';
+import { initialize, mswDecorator } from "msw-storybook-addon";
 
-import theme from '../src/theme/fonts';
+import theme from "theme";
 
 // Initialize MSW
 initialize();
@@ -14,7 +14,7 @@ export const parameters = {
       date: /Date$/,
     },
   },
-}
+};
 
 export const decorators = [
   (Story) => (
@@ -22,5 +22,5 @@ export const decorators = [
       <Story />
     </ChakraProvider>
   ),
-  mswDecorator
+  mswDecorator,
 ];

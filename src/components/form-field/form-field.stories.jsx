@@ -11,7 +11,7 @@ export default {
     error: "Informe um e-mail válido",
     label: "E-mail",
     inputArgs: Email.args,
-  }
+  },
 };
 
 const Template = ({ inputArgs, ...args }) => (

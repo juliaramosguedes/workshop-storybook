@@ -57,15 +57,7 @@
           "import/no-anonymous-default-export": "off"
         }
       }
-    ],
-    "settings": {
-      "import/resolver": {
-        "node": {
-          "paths": ["src"],
-          "extensions": [".js", ".jsx"]
-        }
-      }
-    }
+    ]
   },
   "browserslist": {
     "production": [

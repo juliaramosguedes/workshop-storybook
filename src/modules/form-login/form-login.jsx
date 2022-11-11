@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import { Button, Flex, Heading, Text } from "@chakra-ui/react";
 
 import { FormField, FormFeedback, Input } from "components";
-import { delay } from "utils";
 
 import { schemaResolver } from "./schema";
 
@@ -30,7 +29,7 @@ export const FormLogin = () => {
         },
         body: JSON.stringify(data),
       });
-      
+
       if (!response.ok) {
         throw new Error({
           message: "Something went wrong!",
@@ -81,7 +80,11 @@ export const FormLogin = () => {
         name="email"
         label="E-mail"
       >
-        <Input id="email" option="email" {...register("email", { required: true })} />
+        <Input
+          id="email"
+          option="email"
+          {...register("email", { required: true })}
+        />
       </FormField>
       <FormField
         error={errors.password?.message}
