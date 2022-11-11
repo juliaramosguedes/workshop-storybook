@@ -2,8 +2,8 @@ import React from "react";
 import { ChakraProvider, Container } from "@chakra-ui/react";
 import "@fontsource/inter/600.css";
 
+import theme from "theme";
 import { FormLogin } from "./modules";
-import theme from "./theme/fonts";
 
 function App() {
   return (

@@ -1,37 +1,28 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import * as Yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Flex, Heading, Input, Text } from "@chakra-ui/react";
 
-import { FormField, FormFeedback } from "../../components";
+import { FormField, FormFeedback } from "components";
+import { delay } from "utils";
+
+import { schemaResolver } from "./schema";
 
 export const FormLogin = () => {
   const [formFeedback, setFormFeedback] = useState(null);
-
-  const schema = Yup.object({
-    email: Yup.string()
-      .email("Informe um e-mail válido")
-      .required("Campo obrigatório"),
-    password: Yup.string().required("Campo obrigatório"),
-  });
-
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm({
     mode: "onBlur",
-    resolver: yupResolver(schema),
+    resolver: schemaResolver,
   });
 
   const onSubmit = async (data) => {
     setFormFeedback(null);
     console.log(data);
     try {
-      await new Promise((resolve) => {
-        setTimeout(resolve, 3000);
-      });
+      await delay(1500);
       setFormFeedback({
         status: "success",
         message: "Acesso autorizado",
@@ -55,9 +46,13 @@ export const FormLogin = () => {
       borderRadius={8}
     >
       <Heading as="h1" align="center">
-        <Text as="span" color="purple.600">Progra</Text>
+        <Text as="span" color="purple.600">
+          Progra
+        </Text>
         <Text as="span" color="teal.300">{`{m}`}</Text>
-        <Text as="span" color="purple.600">aria</Text>
+        <Text as="span" color="purple.600">
+          aria
+        </Text>
         <Text as="span" color="purple.800" display="block">
           Summit 2022
         </Text>
