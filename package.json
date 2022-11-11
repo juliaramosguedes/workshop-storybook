@@ -27,6 +27,7 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
+    "test-storybook": "test-storybook",
     "chromatic": "npx chromatic"
   },
   "eslintConfig": {
@@ -56,7 +57,15 @@
           "import/no-anonymous-default-export": "off"
         }
       }
-    ]
+    ],
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "paths": ["src"],
+          "extensions": [".js", ".jsx"]
+        }
+      }
+    }
   },
   "browserslist": {
     "production": [
@@ -71,6 +80,7 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-a11y": "^6.5.13",
     "@storybook/addon-actions": "^6.5.13",
     "@storybook/addon-essentials": "^6.5.13",
     "@storybook/addon-interactions": "^6.5.13",
@@ -81,7 +91,9 @@
     "@storybook/node-logger": "^6.5.13",
     "@storybook/preset-create-react-app": "^4.1.2",
     "@storybook/react": "^6.5.13",
+    "@storybook/test-runner": "^0.9.0",
     "@storybook/testing-library": "^0.0.13",
+    "axe-playwright": "^1.1.11",
     "babel-plugin-named-exports-order": "^0.0.2",
     "chromatic": "^6.11.4",
     "eslint": "^8.27.0",
@@ -92,6 +104,8 @@
     "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.6.7",
+    "jest-environment-node": "^28.1.3",
+    "jest-runner": "^28.1.3",
     "msw": "^0.48.1",
     "msw-storybook-addon": "^1.6.3",
     "prettier": "2.7.1",
