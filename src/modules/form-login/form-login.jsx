@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Button, Flex, Heading, Input, Text } from "@chakra-ui/react";
+import { Button, Flex, Heading, Text } from "@chakra-ui/react";
 
-import { FormField, FormFeedback } from "components";
+import { FormField, FormFeedback, Input } from "components";
 import { delay } from "utils";
 
 import { schemaResolver } from "./schema";
@@ -68,9 +68,7 @@ export const FormLogin = () => {
       >
         <Input
           id="email"
-          type="email"
-          bg="white"
-          placeholder="ada@lovelace.com"
+          option="email"
           {...register("email", { required: true })}
         />
       </FormField>
@@ -82,8 +80,7 @@ export const FormLogin = () => {
       >
         <Input
           id="password"
-          type="password"
-          bg="white"
+          option="password"
           error={errors.password?.message}
           {...register("password", { required: true })}
         />
