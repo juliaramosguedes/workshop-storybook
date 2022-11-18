@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# Desenvolva componentes de forma profissional com Storybook
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Workshop de Storybook no Programaria Summit 2022 ministrado por Julia Ramos
 
-## Available Scripts
+Conheça o Storybook, a ferramenta gratuita mais popular para desenvolver, testar e documentar os seus componentes de forma fácil, rápida e profissional. Ele pode ser usado com diversas ferramentas orientadas a componentes baseadas em Javascript como React, React Native, Angular, Vue e Svelte.
+Chega de ter que rodar o projeto inteiro e editar várias partes para refletir no componente que você está tentando criar. Com Storybook, você constrói cada componente isoladadamente, usando uma poderosa interface gráfica que simplifica o desenvolvimento.
 
-In the project directory, you can run:
+No workshop, iremos conhecer o Storybook, instalá-lo em uma aplicação React e utilizar as suas principais funcionalidades. Vamos aprender na prática como criar, documentar e testar componentes da melhor forma.
+Obs: Para melhor acompanhamento desse workshop, é recomendado ter conhecimento em desenvolvimento frontend com React, Git, Github.
+
+## Tecnologias
+
+React com [create-react-app](https://github.com/facebook/create-react-app)
+
+CSS com [@chakra-ui/react](https://chakra-ui.com/)
+
+Formulário com [react-hook-form](https://react-hook-form.com/) e [yup](https://github.com/jquense/yup)
+
+Qualidade e estilo de cógido com [eslint](https://eslint.org/) e [prettier](https://prettier.io/)
+
+## Começando o projeto
+
+Clone o projeto
+
+### `git clone https://github.com/juliaramosguedes/workshop-storybook.git`
+
+Entre na pasta do projeto
+
+### `cd ./workshop-storybook`
+
+Na pasta raiz do projeto, instale todas as dependências ao rodar
+
+### `npm install`
+
+Se quiser iniciar o projeto, dê o comando
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Abra [http://localhost:3000](http://localhost:3000) para ver no navegador
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Se quiser iniciar o Storybook, dê o comando
 
-### `npm test`
+### `npm run storybook`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Abra [http://localhost:6006](http://localhost:3000) para ver no navegador

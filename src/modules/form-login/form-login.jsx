@@ -84,7 +84,6 @@ export const FormLogin = () => {
           id="password"
           type="password"
           bg="white"
-          error={errors.password?.message}
           {...register("password", { required: true })}
         />
       </FormField>
